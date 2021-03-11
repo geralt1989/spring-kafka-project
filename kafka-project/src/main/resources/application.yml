@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+       binder:
+        brokers:
+          - kafka:9092
+      bindings:
+        output:
+          binder: kafka
+          destination: user
+          content-type: application/json
+
