@@ -14,4 +14,4 @@ COPY --from=maven ./target/kafka-project-*-SNAPSHOT.jar ./kafka-project.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "./kafka-project.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "./kafka-project.jar"]
