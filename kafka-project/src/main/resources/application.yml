@@ -1,14 +1,25 @@
+server:
+  port: 9000
 spring:
-  cloud:
-    stream:
-      default-binder: kafka
-      kafka:
-       binder:
-        brokers:
-          - kafka:9092
-      bindings:
-        output:
-          binder: kafka
-          destination: user
-          content-type: application/json
-
+  kafka:
+    client-id: kafka-application-1
+    bootstrap-servers: localhost:9092
+#    consumer:
+#      group-id: kafka-consumer-group-1
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonDeserializer
+custom:
+  kafka:
+    topic:
+      users: users
+---
+spring:
+  profile: docker
+  kafka:
+    bootstrap-servers: kafka:9092
+server:
+  port: 8080
