@@ -1,0 +1,28 @@
+server:
+  port: 9001
+spring:
+  kafka:
+    client-id: kafka-application-2
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: kafka-consumer-group-1
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/user-data
+custom:
+  kafka:
+    topic:
+      users: users
+---
+spring:
+  profile: docker
+  kafka:
+    bootstrap-servers: kafka:9092
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/user-data
+server:
+  port: 8080
