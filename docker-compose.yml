@@ -64,8 +64,20 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-    
-    
+      
+      
+  portainer:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    ports:
+      - 9003:9000
+      - 8001:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /portainer/portainer_data:/data
+
+     
   kafka-producer: 
     build: ./kafka-project
     container_name: kafka-producer
