@@ -1,6 +1,6 @@
 package com.spring.kafkaproject.messagging;
 
-import com.spring.kafkaproject.model.User;
+import com.spring.kafkacommon.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;

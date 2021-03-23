@@ -5,18 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account {
+public class GeoDB {
 
-    private String username;
-    private String password;
-    private String role;
-    private String email;
-    private Date registrationDate;
-
+    private String latitude;
+    private String longitude;
 }

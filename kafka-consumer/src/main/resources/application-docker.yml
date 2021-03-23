@@ -1,0 +1,9 @@
+spring:
+  profile: docker
+  kafka:
+    bootstrap-servers: kafka:9092
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/user-data
+server:
+  port: 8080

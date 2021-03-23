@@ -1,9 +1,9 @@
 package com.spring.kafkaconsumer.messagging;
 
-import com.spring.kafkaconsumer.model.User;
+import com.spring.kafkacommon.model.User;
+import com.spring.kafkaconsumer.mapper.UserMapper;
 import com.spring.kafkaconsumer.service.MongoService;
 import lombok.RequiredArgsConstructor;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 public class KafkaConsumer {
 
     private final MongoService mongoService;
+    private final UserMapper userMapper;
 
     @KafkaListener(topics="${custom.kafka.topic.users}", groupId = "${spring.kafka.consumer.group-id}")
-    public void onMessage(ConsumerRecord<String, User> message) {
+    public void onMessage(User user) {
 
-        mongoService.saveUser(message.value());
-
+        mongoService.saveUser(userMapper.mapToUserDB(user));
     }
 
 }

@@ -1,0 +1,6 @@
+spring:
+  profile: docker
+  kafka:
+    bootstrap-servers: kafka:9092
+server:
+  port: 8080

@@ -1,4 +1,4 @@
-package com.spring.kafkaproject.model;
+package com.spring.kafkaconsumer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Address {
+public class AddressDB {
 
     private String street;
     private String suite;
     private String city;
     private String zipCode;
-    private Geo geo;
+    private GeoDB geo;
 
 }

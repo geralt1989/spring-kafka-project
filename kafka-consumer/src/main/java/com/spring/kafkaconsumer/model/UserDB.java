@@ -9,23 +9,24 @@ import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Document("users")
-public class User {
+public class UserDB {
 
     @Id
     private String _id;
     @Version
     private String version;
-    @Indexed(unique = true)
-    private String id;
+    @Indexed(unique = true)    private String id;
     private String firstName;
     private String lastName;
     private String birthDate;
-    private Account account;
-    private Address address;
+    private AccountDB account;
+    private AddressDB address;
 
 }

@@ -1,10 +1,12 @@
 package com.spring.kafkaproject.controller;
 
+import com.spring.kafkacommon.model.User;
 import com.spring.kafkaproject.messagging.KafkaProducer;
-import com.spring.kafkaproject.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 @RestController
 @RequiredArgsConstructor

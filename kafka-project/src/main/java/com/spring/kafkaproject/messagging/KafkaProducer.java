@@ -1,6 +1,6 @@
 package com.spring.kafkaproject.messagging;
 
-import com.spring.kafkaproject.model.User;
+import com.spring.kafkacommon.model.User;
 
 public interface KafkaProducer {
 

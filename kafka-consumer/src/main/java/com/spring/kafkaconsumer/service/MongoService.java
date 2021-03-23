@@ -1,7 +1,9 @@
 package com.spring.kafkaconsumer.service;
 
-import com.spring.kafkaconsumer.model.User;
+import com.spring.kafkaconsumer.model.UserDB;
 
 public interface MongoService {
-    User saveUser(User user);
+
+    UserDB saveUser(UserDB user);
+
 }

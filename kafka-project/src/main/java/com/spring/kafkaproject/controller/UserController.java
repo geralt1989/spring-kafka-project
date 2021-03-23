@@ -1,6 +1,6 @@
 package com.spring.kafkaproject.controller;
 
-import com.spring.kafkaproject.model.User;
+import com.spring.kafkacommon.model.User;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

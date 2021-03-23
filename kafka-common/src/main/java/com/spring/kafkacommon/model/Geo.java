@@ -1,4 +1,4 @@
-package com.spring.kafkaconsumer.model;
+package com.spring.kafkacommon.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

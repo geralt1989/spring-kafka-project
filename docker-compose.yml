@@ -35,8 +35,10 @@ services:
     - ALLOW_ANONYMOUS_LOGIN=yes
     - ZOOKEEPER_CLIENT_PORT=2181
     - ZOOKEEPER_TICK_TIME=2000
+    volumes:
+    - /data/zookeeper:/bitnami/zookeeper/data
+      
   
-    
   kafka:
     image: 'bitnami/kafka:latest'
     container_name: kafka
@@ -50,6 +52,8 @@ services:
     - ALLOW_PLAINTEXT_LISTENER=yes
     depends_on:
     - zookeeper
+    volumes:
+    - /data/kakfa:/bitnami/kafka/data
     
     
   mongodb:
@@ -58,7 +62,7 @@ services:
     ports:
     - 27017:27017
     volumes:
-    - /mongodb/data:/data/db
+    - /data/mongodb:/data/db
     healthcheck:
       test: "mongo --eval 'db.stats().ok'"
       interval: 10s
@@ -66,18 +70,6 @@ services:
       retries: 10
       
       
-  portainer:
-    image: portainer/portainer
-    command: -H unix:///var/run/docker.sock
-    restart: always
-    ports:
-      - 9003:9000
-      - 8001:8000
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /portainer/portainer_data:/data
-
-     
   kafka-producer: 
     build: ./kafka-project
     container_name: kafka-producer

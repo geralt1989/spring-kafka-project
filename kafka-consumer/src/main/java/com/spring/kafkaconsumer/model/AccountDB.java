@@ -5,16 +5,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Address {
+public class AccountDB {
 
-    private String street;
-    private String suite;
-    private String city;
-    private String zipCode;
-    private Geo geo;
+    private String username;
+    private String password;
+    private String role;
+    private String email;
+    private Date registrationDate;
 
 }

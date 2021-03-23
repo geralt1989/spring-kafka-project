@@ -22,4 +22,4 @@ COPY ./target/kafka-consumer-*-SNAPSHOT.jar ./kafka-consumer.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "./kafka-co::Qìensumer.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "./kafka-consumer.jar"]
