@@ -16,4 +16,3 @@ custom:
   kafka:
     topic:
       users: users
----

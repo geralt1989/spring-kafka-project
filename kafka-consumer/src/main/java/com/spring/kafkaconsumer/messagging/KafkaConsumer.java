@@ -11,13 +11,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class KafkaConsumer {
 
-    private final MongoService mongoService;
     private final UserMapper userMapper;
+    private final MongoService mongoService;
 
     @KafkaListener(topics="${custom.kafka.topic.users}", groupId = "${spring.kafka.consumer.group-id}")
     public void onMessage(User user) {
-
         mongoService.saveUser(userMapper.mapToUserDB(user));
     }
-
 }
