@@ -19,10 +19,9 @@ import java.io.Serializable;
 public class UserDB {
 
     @Id
-    private String _id;
+    private String id;
     @Version
     private String version;
-    @Indexed(unique = true)    private String id;
     private String firstName;
     private String lastName;
     private String birthDate;
