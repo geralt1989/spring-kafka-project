@@ -15,8 +15,8 @@ public class Account {
 
     private String username;
     private String password;
-    private String role;
+    private Role role;
     private String email;
-    private Date registrationDate;
+    private Date registrationDate = new Date();
 
 }

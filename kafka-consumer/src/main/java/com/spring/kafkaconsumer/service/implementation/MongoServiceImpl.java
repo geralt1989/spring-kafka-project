@@ -1,7 +1,9 @@
-package com.spring.kafkaconsumer.service;
+package com.spring.kafkaconsumer.service.implementation;
 
+import com.spring.kafkacommon.model.Role;
 import com.spring.kafkaconsumer.model.UserDB;
 import com.spring.kafkaconsumer.repository.UsersRepository;
+import com.spring.kafkaconsumer.service.MongoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +30,11 @@ public class MongoServiceImpl implements MongoService {
     public List<UserDB> getAllUsers() {
         return usersRepository.findAll();
     }
+
+    @Override
+    public List<UserDB> getUsersByRole(Role role) {
+        return usersRepository.findAllByRole(role);
+    }
+
 
 }

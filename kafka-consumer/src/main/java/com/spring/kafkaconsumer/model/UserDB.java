@@ -1,9 +1,10 @@
 package com.spring.kafkaconsumer.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.spring.kafkacommon.model.Account;
+import com.spring.kafkacommon.model.Address;
+import com.spring.kafkacommon.model.User;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -12,20 +13,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
 
 @Data
-@Builder
+
 @NoArgsConstructor
-@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Document("users")
-public class UserDB {
+public class UserDB extends User {
 
-    @Id
-    private String id;
-    @Version
-    private String version;
-    private String firstName;
-    private String lastName;
-    private String birthDate;
-    private AccountDB account;
-    private AddressDB address;
-
+    @Builder
+    public UserDB(String id, String version, String firstName, String lastName, String birthDate, Account account, Address address) {
+        super(id, version, firstName, lastName, birthDate, account, address);
+    }
 }

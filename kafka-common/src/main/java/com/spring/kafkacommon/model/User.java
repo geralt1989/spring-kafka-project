@@ -4,18 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
 
-    private String id;
-    private String firstName;
-    private String lastName;
-    private String birthDate;
-    private Account account;
-    private Address address;
+    @Id
+    protected String id;
+    @Version
+    protected String version;
+    protected String firstName;
+    protected String lastName;
+    protected String birthDate;
+    protected Account account;
+    protected Address address;
 
 }
