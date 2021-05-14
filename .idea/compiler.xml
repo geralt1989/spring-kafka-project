@@ -23,9 +23,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="kafka-common" target="11" />
-      <module name="kafka-consumer" target="1.8" />
-      <module name="kafka-project" target="1.8" />
-      <module name="spring-kafka-project" target="1.8" />
+      <module name="kafka-consumer" target="1.6" />
+      <module name="kafka-project" target="1.6" />
+      <module name="spring-kafka-project" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
