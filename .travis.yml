@@ -4,7 +4,7 @@ jdk:
  - openjdk11
 
 script:
- - mvn test -B
+ - /mvnw test -B
 
 # branches for the builds
 branches:
